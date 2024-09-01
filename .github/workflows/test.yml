@@ -1,0 +1,32 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: 
+  pull_request:
+    branch:
+      - main
+      - feature/**
+jobs:
+  test-compose-action:
+    runs-on: ubuntu-latest
+    services:
+      docker:
+        image: docker:25.0.3
+        options: --privileged
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: Unit Testing
+        run: |
+          docker compose  --profile test up  -d --quiet-pull
+          export SLEEP_TIME='2m'
+          echo "nighty night sleeping for $SLEEP_TIME"
+          sleep $SLEEP_TIME
+          docker compose logs housing-unit-tests
+      
+      - name: Get Response Code
+        run: ./test-http-code.sh
+
+      - name: Docker Compose Down
+        run: docker compose down
+        
