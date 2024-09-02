@@ -14,8 +14,12 @@ cd sample_api; fastapi dev ./main.py
 
 However, you can run the code using Docker by building the image and then running the container:
 
-Building the container:
-
+Pull the container:
 ```console
-docker build -t sample_api .
+docker pull ghcr.io/javierclairvaux/fast-api:latest
+```
+
+Run the container:
+```console
+docker run -p 3000:3000 ghcr.io/javierclairvaux/fast-api:latest 
 ```
