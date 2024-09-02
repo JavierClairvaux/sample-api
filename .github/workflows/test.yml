@@ -4,6 +4,8 @@ on:
   pull_request:
     paths-ignore: 
       - src/dockerfile
+      - CHANGELOG.md
+      - README.md
     branch:
       - main
       - feature/**
