@@ -62,7 +62,7 @@ services:
         condition: service_healthy
 
   housing-api:
-    image: ghcr.io/javierclairvaux/fast-api:0.0.1
+    image: ghcr.io/javierclairvaux/fast-api:latest
     container_name: housing-api
     entrypoint: fastapi dev --host 0.0.0.0 --port 3000 ./sample_api/main.py 
     environment:
