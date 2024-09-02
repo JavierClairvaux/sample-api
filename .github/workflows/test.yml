@@ -1,7 +1,9 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: Unit Testing
+run-name: ${{ github.actor }} is running unit testing
 on: 
   pull_request:
+    paths-ignore: 
+      - src/dockerfile
     branch:
       - main
       - feature/**
