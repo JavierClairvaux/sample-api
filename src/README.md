@@ -19,12 +19,3 @@ Building the container:
 ```console
 docker build -t sample_api .
 ```
-
-Run the container:
-```console
-docker run -p 8000:8000 sample_api 
-```
-
-Open http://0.0.0.0:8000/docs to see documentation.
-
-**Note: If you are on Windows you need click on "Yes" when the warning prompted.

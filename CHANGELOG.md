@@ -7,6 +7,7 @@
 
 ### Fixed
 - Pruned comments and blank spaces on docker image
+- Pruned dockerfile documentation
 
 ## [0.0.2] - 2024-09-01
 
